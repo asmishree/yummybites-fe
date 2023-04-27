@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link, json } from 'react-router-dom'
+import { useNavigate, Link, } from 'react-router-dom'
 
 function Login() {
   let navigate = useNavigate()
-  
+
   const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
@@ -27,7 +27,12 @@ function Login() {
       
     );
     if (data.success === true){
+      localStorage.setItem("authToken",data.authToken);
       navigate("/")
+      console.log(data)
+    }
+    else{
+      alert(data.error)
     }
   };
 

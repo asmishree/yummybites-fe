@@ -24,7 +24,9 @@ function Register() {
         },
         withCredentials: true,
       }
+      
     );
+    console.log(data)
   };
 
   return (
