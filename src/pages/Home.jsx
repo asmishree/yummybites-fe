@@ -1,8 +1,12 @@
 import React from 'react'
+import Hero from '../components/Home/Hero'
+import { Box } from '@mui/material'
 
 function Home() {
   return (
-    <div>Home</div>
+    <Box>
+      <Hero/>
+    </Box>
   )
 }
 
