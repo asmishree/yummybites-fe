@@ -5,6 +5,7 @@ import { createTheme } from "@mui/material/styles";
 export const tokens = (mode) => ({
   ...(mode === "dark"
     ? {
+      main:"#FD0D3C",
         grey: {
           100: "#e0e0e0",
           200: "#c2c2c2",
@@ -65,6 +66,7 @@ export const tokens = (mode) => ({
         },
       }
     : {
+      main:"#FD0D3C",
         grey: {
           100: "#141414",
           200: "#292929",
@@ -178,7 +180,7 @@ export const ColorModeContext = createContext({
 });
 
 export const useMode = () => {
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
 
   const colorMode = useMemo(
     () => ({

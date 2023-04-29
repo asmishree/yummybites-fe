@@ -18,7 +18,6 @@ function Hero() {
           </Box>
         </Box>
       </Box>
-      <Box></Box>
     </Box>
   );
 }

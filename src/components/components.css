@@ -1,0 +1,30 @@
+.bg-img{
+    background-image: url(../assets/head.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: 100% 0% 100% 0% / 0% 80% 20% 100%   ;
+}
+
+.bg-color{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 100% 0% 100% 0% / 0% 80% 20% 100%  ;
+}
+
+.uni-intro{
+    position: relative;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.uni-intro h1{
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    margin: 10vh 0;
+}

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link, } from 'react-router-dom'
+import { useNavigate, Link } from "react-router-dom";
+import { Box, TextField,Button  } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
+import "./pages.css"
+import UniversalHero from "../components/UniversalHero";
+
 
 function Login() {
-  let navigate = useNavigate()
-
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
@@ -24,37 +26,59 @@ function Login() {
         },
         withCredentials: true,
       }
-      
     );
-    if (data.success === true){
-      localStorage.setItem("authToken",data.authToken);
-      navigate("/")
-      console.log(data)
-    }
-    else{
-      alert(data.error)
+    if (data.success === true) {
+      localStorage.setItem("authToken", data.authToken);
+      navigate("/");
+      console.log(data);
+    } else {
+      alert(data.error);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+    <Box>
+      <UniversalHero title="Login" />
+      <Box className="auth">
+      <Box mx={2} maxWidth={"400px"}>
+        <form onSubmit={handleSubmit}>
+          <TextField
+          fullWidth
+            id="filled-basic"
+            variant="filled"
+            color="warning"
+            label="Email"
+            type="email"
+            placeholder="Email"
+            value={email}
+            
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+          <TextField
+          fullWidth
+            id="filled-basic"
+            variant="filled"
+            label="Password"
+            type="password"
+            placeholder="Password"
+            color="warning"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+         <Box my={2}>
+         <Button  type="submit" variant="contained" color="warning" endIcon={<SendIcon />}>Login</Button>
+         </Box>
+        </form>
+        <Box textAlign={"center"}>
+      <h2>OR</h2>
+      <p>Don't have Account Create Account here</p>
+      </Box>
+      </Box>
+      
+      </Box>
+
+    </Box>
   );
 }
 

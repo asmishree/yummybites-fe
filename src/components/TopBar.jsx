@@ -76,7 +76,7 @@ window.addEventListener('scroll', changeBackground);
           <NavLink style={navLinkStyles} to="/about">
           <a>CART</a>
           </NavLink>
-          <NavLink style={navLinkStyles} to="/course">
+          <NavLink style={navLinkStyles} to="/login">
           <a>LOGIN</a>
           </NavLink>
         </Box>
