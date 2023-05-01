@@ -3,6 +3,7 @@ import axios from "axios";
 import { Box, TextField,Button  } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import UniversalHero from "../components/UniversalHero";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [name, setName] = useState("");
@@ -88,7 +89,7 @@ function Register() {
       </form>
       <Box textAlign={"center"}>
       <h2>OR</h2>
-      <p>Allready have Account Login here</p>
+      <p>Allready have Account <Link to="/login"> Login here </Link> </p>
       </Box>
       </Box>
       </Box>

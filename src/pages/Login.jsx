@@ -72,7 +72,7 @@ function Login() {
         </form>
         <Box textAlign={"center"}>
       <h2>OR</h2>
-      <p>Don't have Account Create Account here</p>
+      <p>Don't have Account <Link to="/login/new">Create Account here </Link> </p>
       </Box>
       </Box>
       

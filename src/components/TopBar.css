@@ -1,4 +1,5 @@
-.navbar a {
+.navbar span {
+  cursor: pointer;
     padding: 0 10px;
     font-weight: 500;
   }
@@ -24,12 +25,12 @@
     display: none;
   }
   
-  .mob-navbar a{
+  .mob-navbar span{
     margin: 15px 0;
   }
   
   @media screen and (max-width: 800px) {
-    .navbar a {
+    .navbar span {
       display: none;
     }
   }

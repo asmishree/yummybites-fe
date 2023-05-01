@@ -13,26 +13,26 @@ function Footer() {
         <h1>Yummy Bites</h1>
         </Box>
         <Box className="SocialMedia">
-          <a>
+          <span>
             <IconButton>
             <FacebookIcon fontSize="large"/>
             </IconButton>
-          </a>
-          <a>
+          </span>
+          <span>
           <IconButton>
             <WhatsAppIcon fontSize="large"/>
             </IconButton>
-          </a>
-          <a>
+          </span>
+          <span>
           <IconButton>
             <TwitterIcon fontSize="large"/>
             </IconButton>
-          </a>
-          <a>
+          </span>
+          <span>
           <IconButton>
             <InstagramIcon fontSize="large"/>
             </IconButton>
-          </a>
+          </span>
         </Box>
       </Box>
       <Box display="flex" justifyContent="space-between">
