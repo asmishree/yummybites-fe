@@ -16,8 +16,8 @@ const Topbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const authToken = (localStorage.getItem("authToken"));
-
   const navigate = useNavigate();
+  
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     navigate("/login");
