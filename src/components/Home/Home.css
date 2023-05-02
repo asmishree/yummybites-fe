@@ -60,7 +60,10 @@
     width: 30vw;
 }
 .food-item img{
-    width: 25vw;
+    width: 28vw;
+    height: 350px;
+    object-fit: cover;
+    object-position: center center;
 }
 .fooditem-grid{
     display: grid;
