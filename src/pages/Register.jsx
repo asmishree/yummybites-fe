@@ -4,6 +4,7 @@ import { Box, TextField,Button  } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import UniversalHero from "../components/UniversalHero";
 import { Link } from "react-router-dom";
+import API from "../Api";
 
 function Register() {
   const [name, setName] = useState("");
@@ -15,7 +16,7 @@ function Register() {
     e.preventDefault();
     console.log(name, email, location, password);
     const {data} = await axios.post(
-      "http://localhost:5000/api/v1/users/register",
+      `${API}/users/register`,
       {
         name,
         email,

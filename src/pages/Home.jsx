@@ -1,34 +1,78 @@
-import React, { useState } from "react";
-import Hero from "../components/Home/Hero";
+import React, { useEffect, useState } from "react";
+import TopBar from "../components/TopBar";
 import { Box } from "@mui/material";
-import Head from "../components/Home/Head";
-import FoodItem from "../components/Home/FoodItem";
+import FoodItem from "../components/FoodItem";
 import Footer from "../components/Footer";
-import axios from 'axios';
+import axios from "axios";
+import API from "../Api";
 
 function Home() {
-  const [foodItem, setFoodItem] = useState([]);
+  const [foodCat, setFoodCat] = useState([]);
+  const [foodItems, setFoodItems] = useState([]);
+  const [search, setSearch] = useState("");
 
-  axios.get('http://localhost:5000/api/v1/items/list')
-  .then(response => {
-    setFoodItem(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+  const loadFoodItems = async () => {
+    axios
+      .post(`${API}/items/list`)
+      .then((response) => {
+        setFoodItems(response.data[0]);
+        setFoodCat(response.data[1]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    loadFoodItems();
+  }, []);
   return (
     <Box>
-      <Hero />
-      <Head />
-      <Box className="fooditem-grid" mx={5}>
-        {
-          foodItem !==[]
-          ? foodItem.map((data)=>{
-            return (<div><FoodItem name={data.name} img={data.img} /></div>)
-          }): <div>Loading....</div>
-        }
-        
+      <Box>
+      <Box className="home-bg-img">
+        <Box className="home-bg-color">
+          <TopBar/>
+          <Box className="home-intro">
+            <Box>
+              <h1>Authentic Italian Pizzeria</h1>
+              <Box className="search">
+                <input placeholder="SEARCH HERE" value={search} onChange={(e) => { setSearch(e.target.value) }}/>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
+    </Box>
+      {foodCat !== []
+        ? foodCat.map((data) => {
+            return (
+              <Box className="grid-flow" m={5}>
+                <Box key={data.id} className="grid-head">
+                  {data.CategoryName}
+                </Box>
+
+                {foodItems !== [] ? (
+                  foodItems
+                    .filter(
+                      (items) =>
+                        items.CategoryName === data.CategoryName &&
+                        items.name.toLowerCase().includes(search.toLowerCase())
+                    )
+                    .map((filterItems) => {
+                      return (
+                        <Box key={filterItems.id}>
+                          <FoodItem name={filterItems.name} item={filterItems} options={filterItems.options[0]} img={filterItems.img} description={filterItems.description} />
+                        </Box>
+                      );
+                    })
+                ) : (
+                  <Box> No Such Data </Box>
+                )}
+              </Box>
+            );
+          })
+        : ""}
+
+      <Box className="fooditem-grid" mx={5}></Box>
       <Box display="block">
         <Footer />
       </Box>

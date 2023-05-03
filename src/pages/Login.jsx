@@ -5,6 +5,7 @@ import { Box, TextField,Button  } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import "./pages.css"
 import UniversalHero from "../components/UniversalHero";
+import API from "../Api";
 
 
 function Login() {
@@ -15,7 +16,7 @@ function Login() {
     e.preventDefault();
     console.log(email, password);
     const { data } = await axios.post(
-      "http://localhost:5000/api/v1/users/login",
+      `${API}/users/login`,
       {
         email,
         password,
