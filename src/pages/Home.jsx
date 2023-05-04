@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TopBar from "../components/TopBar";
 import { Box } from "@mui/material";
-import FoodItem from "../components/FoodItem";
+import FoodItemCard from "../components/FoodItemCard";
 import Footer from "../components/Footer";
 import axios from "axios";
 import API from "../Api";
@@ -15,7 +15,11 @@ function Home() {
     axios
       .post(`${API}/items/list`)
       .then((response) => {
-        setFoodItems(response.data[0]);
+        const foodData = response.data[0];
+        foodData.forEach(function (obj) {
+          delete obj.options[0]._id;
+        });
+        setFoodItems(foodData);
         setFoodCat(response.data[1]);
       })
       .catch((error) => {
@@ -28,20 +32,26 @@ function Home() {
   return (
     <Box>
       <Box>
-      <Box className="home-bg-img">
-        <Box className="home-bg-color">
-          <TopBar/>
-          <Box className="home-intro">
-            <Box>
-              <h1>Authentic Italian Pizzeria</h1>
-              <Box className="search">
-                <input placeholder="SEARCH HERE" value={search} onChange={(e) => { setSearch(e.target.value) }}/>
+        <Box className="home-bg-img">
+          <Box className="home-bg-color">
+            <TopBar />
+            <Box className="home-intro">
+              <Box>
+                <h1>Authentic Italian Pizzeria</h1>
+                <Box className="search">
+                  <input
+                    placeholder="SEARCH HERE"
+                    value={search}
+                    onChange={(e) => {
+                      setSearch(e.target.value);
+                    }}
+                  />
+                </Box>
               </Box>
             </Box>
           </Box>
         </Box>
       </Box>
-    </Box>
       {foodCat !== []
         ? foodCat.map((data) => {
             return (
@@ -60,7 +70,10 @@ function Home() {
                     .map((filterItems) => {
                       return (
                         <Box key={filterItems.id}>
-                          <FoodItem name={filterItems.name} item={filterItems} options={filterItems.options[0]} img={filterItems.img} description={filterItems.description} />
+                          <FoodItemCard
+                            foodItem={filterItems}
+                            options={filterItems.options[0]}
+                          />
                         </Box>
                       );
                     })

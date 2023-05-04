@@ -81,7 +81,7 @@ const Topbar = () => {
           <Box display="flex">
             {authToken ? (
               <Box display="flex">
-                <NavLink style={navLinkStyles} to="/">
+                <NavLink style={navLinkStyles} to="/cart">
                   <span>CART</span>
                 </NavLink>
                 <NavLink style={navLinkStyles} to="/about">
