@@ -6,6 +6,8 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 export default function FoodItemCard(props) {
 
+
+
   let dispatch = useDispatchCart();
   let data = useCart();
   const priceRef = useRef()
@@ -60,14 +62,14 @@ export default function FoodItemCard(props) {
     setSize(priceRef.current.value)
   },[])
   return (
-    <Box className="food-item" border="2px solid" padding="10px">
+    <Box className="food-item" border="2px solid" padding="10px" >
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
         className="image-box"
       >
-        <Box className="description"> {props.description} </Box>
+        <Box className="description" > {props.foodItem.description} </Box>
         <img src={props.foodItem.img} alt="food" />
       </Box>
       <h3>{props.foodItem.name}</h3>

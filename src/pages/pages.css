@@ -105,15 +105,24 @@
 }
 .description{
     display: flex;
+    font-size: 0px;
     position: absolute;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
     width: 18vw;
-    height: 350px;
-    display: none;
+    height: 300px;
+    transition: .1s;
+}
+
+
+
+.description:hover{
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .cart{
@@ -176,6 +185,11 @@
     .image-box img{
         height: 200px;
     }
+
+    .description{
+        width: 18vw;
+        height: 200px;
+    }
 }
 
 @media screen and (max-width: 1150px) {
@@ -183,11 +197,13 @@
     .food-item{
         width: 30vw;
     }
+  
 
-    .image-box img{
+    .description, .image-box img{
         width: 28vw;
         height: 250px;
     }
+  
 
     .grid-flow{
         display: grid;
@@ -209,7 +225,7 @@
         width: 45vw;
     }
 
-    .image-box img{
+    .description,.image-box img{
         width: 40vw;
         height: 250px;
     }
@@ -234,9 +250,13 @@
         width: 40vw;
     }
 
-    .image-box img{
+    .description,.image-box img{
         width: 35vw;
         height: 150px;
+    }
+
+    .description:hover{
+        font-size: 15px;
     }
 
     .grid-flow{
@@ -273,7 +293,7 @@
         width: 83vw;
     }
 
-    .image-box img{
+    .description,.image-box img{
         width: 75vw;
         height: 250px;
     }
