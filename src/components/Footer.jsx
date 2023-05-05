@@ -6,6 +6,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
+  const date = new Date();
   return (
     <Box m={5}>
       <Box display="flex" justifyContent="space-between" mb={2}>
@@ -35,8 +36,8 @@ function Footer() {
           </span>
         </Box>
       </Box>
-      <Box display="flex" justifyContent="space-between">
-        <p>Copyright © 2023 Yummy Bites</p>
+      <Box className="footer-font">
+        <p>Copyright © {date.getFullYear()} Yummy Bites</p>
         <p>Design by Sagar Nirwal</p>
       </Box>
     </Box>

@@ -139,21 +139,34 @@ const Topbar = () => {
           justifyContent="space-between"
           alignItems="center"
         >
+
           <NavLink style={mobLinkStyles} to="/">
             <span>HOME</span>
           </NavLink>
-          <NavLink style={mobLinkStyles} to="/about">
-            <span>ABOUT</span>
+          {authToken ? (
+              <Box className="mob-links">
+          <NavLink style={mobLinkStyles} to="/cart">
+            <span>CART</span>
           </NavLink>
-          <NavLink style={mobLinkStyles} to="/course">
-            <span>COURSE</span>
+          <NavLink style={mobLinkStyles} to="/order">
+            <span>MY ORDERS</span>
           </NavLink>
-          <NavLink style={mobLinkStyles} to="/gallery">
-            <span>GALLERY</span>
+          <NavLink style={mobLinkStyles} to="/login">
+            <span onClick={handleLogout}>LOGOUT</span>
           </NavLink>
-          <NavLink style={mobLinkStyles} to="/contact">
-            <span>CONTACT US</span>
-          </NavLink>
+
+          </Box>
+            ) :  (
+              <Box className="mob-links">
+                  <NavLink style={navLinkStyles} to="/login">
+                  <span>LOGIN</span>
+                </NavLink>
+                <NavLink style={navLinkStyles} to="/login/new">
+                  <span>SIGN UP</span>
+                </NavLink>
+              </Box>
+            )}
+    
         </Box>
       </Box>
     </Box>

@@ -13,21 +13,7 @@
     border-radius: 100% 0% 100% 0% / 0% 80% 20% 100%  ;
 }
 
-.home-intro{
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
-.home-intro h1{
-    font-size: 5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: white;
-    margin: 10vh 0;
-}
 
 .search input{
     width: 90vw;
@@ -70,4 +56,265 @@
     display: flex;
     height: 63vh;
     padding:  20px 2%;
+}
+
+.grid-flow{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-head{
+    font-size: 2rem;
+    font-weight: bold;   
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.food-item .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.food-item .row select{
+    font-size: 18px;
+    padding: 1px 5px
+}
+
+.food-item{
+    width: 20vw;
+}
+.food-item h3{
+    margin: 10px 0;
+    font-size: 1.6rem;
+}
+
+
+.image-box img{
+    width: 18vw;
+    height: 300px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+
+.image-box {
+    position: relative;
+}
+.description{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 18vw;
+    height: 350px;
+    display: none;
+}
+
+.cart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart hr{
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.home-intro{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-intro h1{
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+    margin: 10vh 0;
+}
+
+.mob-links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mobile-table{
+    display: none;
+    margin: 10px 5px;
+}
+
+.footer-font{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+    color: #F57C00;
+  }
+
+  .link:hover{
+    color: #ffa726;
+  }
+
+
+
+/* Media query is started here */
+
+@media screen and (max-width: 1400px) {
+    .image-box img{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .food-item{
+        width: 30vw;
+    }
+
+    .image-box img{
+        width: 28vw;
+        height: 250px;
+    }
+
+    .grid-flow{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    
+    .grid-head{
+        font-size: 2rem;
+        font-weight: bold;   
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .food-item{
+        width: 45vw;
+    }
+
+    .image-box img{
+        width: 40vw;
+        height: 250px;
+    }
+
+    .grid-flow{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+    .grid-head{
+        font-size: 2rem;
+        font-weight: bold;   
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .food-item{
+        width: 40vw;
+    }
+
+    .image-box img{
+        width: 35vw;
+        height: 150px;
+    }
+
+    .grid-flow{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    
+    .grid-head{
+        font-size: 2rem;
+        font-weight: bold;   
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .food-item h3{
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .food-item .row select{
+        font-size: 15px;
+        padding: 1px 5px
+    }
+
+    .home-intro h1{
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .food-item{
+        width: 83vw;
+    }
+
+    .image-box img{
+        width: 75vw;
+        height: 250px;
+    }
+
+    .grid-flow{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    
+    .grid-head{
+        font-size: 2rem;
+        font-weight: bold;   
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .food-item h3{
+        margin: 10px 0;
+        font-size: 1.5rem;
+    }
+
+    .food-item .row select{
+        font-size: 18px;
+        padding: 1px 5px
+    }
+
+    .SocialMedia{
+        display: none;
+    }
+
+    .cart-table{
+        display: none;
+    }
+
+    .mobile-table{
+        display: block;
+    }
+
+    .footer-font{
+        flex-direction: column;
+        text-align: center;
+    }
 }

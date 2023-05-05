@@ -49,7 +49,6 @@ export default function Cart() {
   return (
     <Box>
       <UniversalHero title="Cart"/>
-      {console.log(data)}
       <Box className='cart-table'>
       <TableContainer component={Paper} >
         <Table>
@@ -78,6 +77,40 @@ export default function Cart() {
         </TableContainer>
         <Box className="cart-footer">
         <Box><h1>Total Price: {totalPrice}/-</h1></Box>
+        <Box>
+          <Button onClick={handleCheckOut} variant="contained" color="warning" > Check Out </Button>
+        </Box>
+        </Box>
+      </Box>
+      {/* Mobile Table View */}
+      <Box className='mobile-table'>
+      <TableContainer component={Paper} >
+        <Table>
+          <TableHead>
+            <TableRow>
+            
+              <TableCell >Name</TableCell>
+              <TableCell align="center">Quantity</TableCell>
+              <TableCell align="center">Option</TableCell>
+              <TableCell align="center">Amount</TableCell>
+              <TableCell ></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map((food, index) => (
+              <TableRow>
+   
+                <TableCell>{food.name}</TableCell>
+                <TableCell align="center">{food.qty}</TableCell>
+                <TableCell align="center">{food.size}</TableCell>
+                <TableCell align="center">{food.price}</TableCell>
+                <TableCell align="left"><IconButton type="button"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></IconButton> </TableCell></TableRow>
+            ))}
+          </TableBody>
+        </Table>
+        </TableContainer>
+        <Box className="cart-footer">
+        <Box><h2>Total Price: {totalPrice}/-</h2></Box>
         <Box>
           <Button onClick={handleCheckOut} variant="contained" color="warning" > Check Out </Button>
         </Box>

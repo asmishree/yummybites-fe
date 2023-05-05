@@ -3,10 +3,11 @@ import axios from "axios";
 import { Box, TextField,Button  } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import UniversalHero from "../components/UniversalHero";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import API from "../Api";
 
 function Register() {
+  let navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [location, setLocation] = useState("");
@@ -14,8 +15,8 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email, location, password);
-    const {data} = await axios.post(
+    console.log(email, password);
+    const { data } = await axios.post(
       `${API}/users/register`,
       {
         name,
@@ -29,9 +30,15 @@ function Register() {
         },
         withCredentials: true,
       }
-      
     );
-    console.log(data)
+    if (data.success === true) {
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("authToken", data.authToken);
+      navigate("/");
+      alert(data.message);
+    } else {
+      alert(data.message);
+    }
   };
 
   return (
@@ -62,17 +69,7 @@ function Register() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <TextField
-        fullWidth
-        id="filled-basic"
-        label="Location"
-        variant="filled"
-        color="warning"
-          type="text"
-          placeholder="Location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
+        
         <TextField
         fullWidth
         id="filled-basic"
@@ -84,13 +81,26 @@ function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <TextField
+        fullWidth
+        id="filled-basic"
+        label="Location"
+        variant="filled"
+        multiline
+          rows={3}
+        color="warning"
+          type="text"
+          placeholder="Location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
         <Box my={2}>
         <Button type="submit" variant="contained" color="warning" endIcon={<SendIcon />}>Register</Button>
         </Box>
       </form>
       <Box textAlign={"center"}>
       <h2>OR</h2>
-      <p>Allready have Account <Link to="/login"> Login here </Link> </p>
+      <p>Allready have Account <Link to="/login" className="link"> Login here </Link> </p>
       </Box>
       </Box>
       </Box>

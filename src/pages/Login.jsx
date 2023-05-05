@@ -32,9 +32,9 @@ function Login() {
       localStorage.setItem("userEmail", email);
       localStorage.setItem("authToken", data.authToken);
       navigate("/");
-      console.log(data);
+      alert(data.message);
     } else {
-      alert(data.error);
+      alert(data.message);
     }
   };
 
@@ -74,7 +74,7 @@ function Login() {
         </form>
         <Box textAlign={"center"}>
       <h2>OR</h2>
-      <p>Don't have Account <Link to="/login/new">Create Account here </Link> </p>
+      <p>Don't have Account <Link to="/login/new" className="link">Create Account here </Link> </p>
       </Box>
       </Box>
       
