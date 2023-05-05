@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const date = new Date();
@@ -38,7 +39,7 @@ function Footer() {
       </Box>
       <Box className="footer-font">
         <p>Copyright © {date.getFullYear()} Yummy Bites</p>
-        <p>Design by Sagar Nirwal</p>
+        <p>Design by <Link to="https://github.com/sn247776">Sagar Nirwal</Link></p>
       </Box>
     </Box>
   );
