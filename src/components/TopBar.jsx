@@ -160,10 +160,10 @@ const Topbar = () => {
           </Box>
             ) :  (
               <Box className="mob-links">
-                  <NavLink style={navLinkStyles} to="/login">
+                  <NavLink style={mobLinkStyles} to="/login">
                   <span>LOGIN</span>
                 </NavLink>
-                <NavLink style={navLinkStyles} to="/login/new">
+                <NavLink style={mobLinkStyles} to="/login/new">
                   <span>SIGN UP</span>
                 </NavLink>
               </Box>
