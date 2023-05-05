@@ -5,6 +5,7 @@ import SendIcon from '@mui/icons-material/Send';
 import UniversalHero from "../components/UniversalHero";
 import { useNavigate, Link } from "react-router-dom";
 import API from "../Api";
+import { toast } from "react-hot-toast";
 
 function Register() {
   let navigate = useNavigate();
@@ -35,9 +36,9 @@ function Register() {
       localStorage.setItem("userEmail", email);
       localStorage.setItem("authToken", data.authToken);
       navigate("/");
-      alert(data.message);
+      toast.success(data.message);
     } else {
-      alert(data.message);
+      toast.error(data.message);
     }
   };
 

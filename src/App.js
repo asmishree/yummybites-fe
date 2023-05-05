@@ -9,26 +9,37 @@ import Register from './pages/Register'
 import { CartProvider } from './components/ContextReducer';
 import Cart from "./pages/Cart"
 import MyOrder from './pages/MyOrder';
+import { Toaster } from "react-hot-toast";
+import NotFound from './pages/NotFound';
 
 
 
 function App() {
   const [theme, colorMode] = useMode();
+  const authToken = (localStorage.getItem("authToken"));
   return (
     <ColorModeContext.Provider value={colorMode}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <CartProvider>
     <Router>
-
+    {authToken ? (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<MyOrder />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/new" element={<Register />} />
-      </Routes>
-
+        <Route path="*" element={<NotFound />} />
+      </Routes> ) :
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/login/new" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
+        </Routes>}
+      <Toaster />
     </Router>
     </CartProvider>
     </ThemeProvider>

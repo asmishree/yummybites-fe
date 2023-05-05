@@ -6,6 +6,7 @@ import UniversalHero from '../components/UniversalHero';
 import Paper from '@mui/material/Paper';
 import { Box, Table, TableBody, TableCell, TableHead, TableRow,TableContainer, Button, IconButton } from '@mui/material';
 import API from '../Api';
+import { toast } from "react-hot-toast";
 
 
 
@@ -39,6 +40,7 @@ export default function Cart() {
       });
       if (response.status === 200) {
         dispatch({ type: "DROP" })
+        toast.success("Order Placed");
       }
     } catch (error) {
       console.log(error);

@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import "./pages.css"
 import UniversalHero from "../components/UniversalHero";
 import API from "../Api";
+import { toast } from "react-hot-toast";
 
 
 function Login() {
@@ -32,9 +33,9 @@ function Login() {
       localStorage.setItem("userEmail", email);
       localStorage.setItem("authToken", data.authToken);
       navigate("/");
-      alert(data.message);
+      toast.success(data.message);
     } else {
-      alert(data.message);
+      toast.error(data.message);
     }
   };
 

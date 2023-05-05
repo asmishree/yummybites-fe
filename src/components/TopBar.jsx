@@ -11,6 +11,7 @@ import Badge from '@mui/material/Badge';
 import "./TopBar.css";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from "./ContextReducer";
+import { toast } from "react-hot-toast";
 
 const Topbar = () => {
   const theme = useTheme();
@@ -25,6 +26,7 @@ const Topbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("userEmail")
+    toast.success("Logout successfully");
     navigate("/login");
   };
 
