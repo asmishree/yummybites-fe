@@ -7,7 +7,10 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
+import Badge from '@mui/material/Badge';
 import "./TopBar.css";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useCart } from "./ContextReducer";
 
 const Topbar = () => {
   const theme = useTheme();
@@ -17,6 +20,7 @@ const Topbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const authToken = (localStorage.getItem("authToken"));
   const navigate = useNavigate();
+  let data = useCart()
   
   const handleLogout = () => {
     localStorage.removeItem("authToken");
@@ -82,7 +86,9 @@ const Topbar = () => {
             {authToken ? (
               <Box display="flex">
                 <NavLink style={navLinkStyles} to="/cart">
-                  <span>CART</span>
+                <Badge badgeContent={data.length} color="warning" overlap="circular">
+                  <ShoppingCartIcon/>
+                  </Badge>
                 </NavLink>
                 <NavLink style={navLinkStyles} to="/about">
                   <span>MY ORDERS</span>

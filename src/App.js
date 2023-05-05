@@ -7,7 +7,7 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import { CartProvider } from './components/ContextReducer';
-import Cart from "./components/Cart"
+import Cart from "./pages/Cart"
 
 
 
