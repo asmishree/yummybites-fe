@@ -29,6 +29,7 @@ function Login() {
       }
     );
     if (data.success === true) {
+      localStorage.setItem("userEmail", email);
       localStorage.setItem("authToken", data.authToken);
       navigate("/");
       console.log(data);

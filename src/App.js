@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Register from './pages/Register'
 import { CartProvider } from './components/ContextReducer';
 import Cart from "./pages/Cart"
+import MyOrder from './pages/MyOrder';
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order" element={<MyOrder />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/new" element={<Register />} />
       </Routes>

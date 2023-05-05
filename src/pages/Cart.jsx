@@ -1,9 +1,14 @@
 import React from 'react'
+import axios from 'axios';
 import Delete from '@mui/icons-material/Delete';
 import { useCart, useDispatchCart } from '../components/ContextReducer';
 import UniversalHero from '../components/UniversalHero';
 import Paper from '@mui/material/Paper';
-import { Box, Table, TableBody, TableCell, TableHead, TableRow,TableContainer } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableHead, TableRow,TableContainer, Button, IconButton } from '@mui/material';
+import API from '../Api';
+
+
+
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
@@ -22,23 +27,21 @@ export default function Cart() {
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/auth/orderData", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
+    try {
+      const response = await axios.post(`${API}/orderdata`, {
         order_data: data,
         email: userEmail,
         order_date: new Date().toDateString()
-      })
-    });
-    console.log("JSON RESPONSE:::::", response.status)
-    if (response.status === 200) {
-      dispatch({ type: "DROP" })
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.status === 200) {
+        dispatch({ type: "DROP" })
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -47,8 +50,8 @@ export default function Cart() {
     <Box>
       <UniversalHero title="Cart"/>
       {console.log(data)}
-      <Box>
-      <TableContainer component={Paper}>
+      <Box className='cart-table'>
+      <TableContainer component={Paper} >
         <Table>
           <TableHead>
             <TableRow>
@@ -68,14 +71,16 @@ export default function Cart() {
                 <TableCell align="center">{food.qty}</TableCell>
                 <TableCell align="center">{food.size}</TableCell>
                 <TableCell align="center">{food.price}</TableCell>
-                <TableCell align="center"><button type="button"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </TableCell></TableRow>
+                <TableCell align="center"><IconButton type="button"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></IconButton> </TableCell></TableRow>
             ))}
           </TableBody>
         </Table>
         </TableContainer>
+        <Box className="cart-footer">
         <Box><h1>Total Price: {totalPrice}/-</h1></Box>
         <Box>
-          <button onClick={handleCheckOut} > Check Out </button>
+          <Button onClick={handleCheckOut} variant="contained" color="warning" > Check Out </Button>
+        </Box>
         </Box>
       </Box>
     </Box>

@@ -55,3 +55,19 @@
 .auth p{
     margin: 50px 0;
 }
+
+.cart-footer{
+    width: calc(100vw - 2%);
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+}
+
+.cart-table{
+    display: flex;
+    height: 63vh;
+    padding:  20px 2%;
+}

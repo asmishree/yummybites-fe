@@ -24,6 +24,7 @@ const Topbar = () => {
   
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("userEmail")
     navigate("/login");
   };
 
@@ -90,7 +91,7 @@ const Topbar = () => {
                   <ShoppingCartIcon/>
                   </Badge>
                 </NavLink>
-                <NavLink style={navLinkStyles} to="/about">
+                <NavLink style={navLinkStyles} to="/order">
                   <span>MY ORDERS</span>
                 </NavLink>
                 <Box>
