@@ -50,6 +50,8 @@ const Topbar = () => {
       color: colors.link[500],
       borderBottom: isActive ? "2px solid" : "none",
       textDecoration: "none",
+      fontSize:"25px",
+      margin:"10px 0"
     };
   };
 
@@ -127,12 +129,12 @@ const Topbar = () => {
         </Box>
       </Box>
       <Box
-        className={menuOpen ? "mob-navbar" : "mob-navbar open"}
+        className={menuOpen ? "mob-navbar open" : "mob-navbar"}
         bgcolor={colors.primary[400]}
       >
         <Box textAlign="right">
           <IconButton onClick={handleMenuClick}>
-            <CloseIcon />
+            <CloseIcon fontSize="large"/>
           </IconButton>
         </Box>
         <Box

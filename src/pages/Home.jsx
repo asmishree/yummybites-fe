@@ -85,6 +85,9 @@ function Home() {
           })
         : ""}
 
+{foodCat === []
+        ? <Box className="home-loading"><h1>Wait</h1></Box>: ""}
+
       <Box className="fooditem-grid" mx={5}></Box>
       <Box display="block">
         <Footer />

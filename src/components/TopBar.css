@@ -12,17 +12,18 @@
   }
   
   .mob-navbar{
-    display: block;
+    transform: translateY(-100%);
     position: fixed;
     right: 0;
     top: 0;
     min-height: 50vh;
     width: 100vw;
     z-index: 5000;
+    transition: transform .5s ease;
   }
   
   .open{
-    display: none;
+    transform: translateY(0);
   }
   
   .mob-navbar span{

@@ -103,7 +103,7 @@ export default function FoodItemCard(props) {
           endIcon={<AddShoppingCartIcon />}
           onClick={handleAddToCart}
         >
-          Cart
+          Add to Cart
         </Button>
       </Box>
     </Box>
