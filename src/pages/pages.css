@@ -350,4 +350,13 @@
     .footerlogo{
         display: none;
     }
+
+    .home-bg-img{
+        border-radius: 100% 0% 100% 0% / 0% 100% 8% 100%   ;
+    
+    }
+    
+    .home-bg-color{
+        border-radius: 100% 0% 100% 0% / 0% 100% 8% 100%  ;
+    }
 }
