@@ -61,7 +61,7 @@ export default function FoodItemCard(props) {
     setSize(priceRef.current.value)
   },[])
   return (
-    <Box className="food-item" border="2px solid" pb="10px" pt="2px" >
+    <Box className="food-item" border="2px solid" pb="10px" >
       <Box
         display="flex"
         justifyContent="center"

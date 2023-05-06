@@ -92,7 +92,7 @@
 
 
 .image-box img{
-    width: calc(20vw - 5px);
+    width: calc(20vw - 2px);
     height: 300px;
     object-fit: cover;
     object-position: center center;
@@ -111,7 +111,7 @@
     align-items: center;
     text-align: center;
     padding: 10px;
-    width: calc(20vw - 5px);
+    width: calc(20vw - 2px);
     height: 300px;
 }
 
@@ -214,7 +214,7 @@
   
 
     .description, .image-box img{
-        width: calc(30vw - 5px);
+        width: calc(30vw - 2px);
         height: 250px;
     }
   
@@ -240,7 +240,7 @@
     }
 
     .description,.image-box img{
-        width: calc(45vw - 5px);
+        width: calc(45vw - 2px);
         height: 250px;
     }
 
@@ -265,7 +265,7 @@
     }
 
     .description,.image-box img{
-        width: calc(40vw - 5px);
+        width: calc(40vw - 2px);
         height: 150px;
     }
 
@@ -308,7 +308,7 @@
     }
 
     .description,.image-box img{
-        width: calc(83vw - 5px);
+        width: calc(83vw - 2px);
         height: 250px;
     }
 
