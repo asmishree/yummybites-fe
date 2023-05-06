@@ -11,7 +11,7 @@ function Footer() {
   return (
     <Box m={5}>
       <Box display="flex" justifyContent="space-between" mb={2}>
-        <Box className="logo">
+        <Box className="logo footerlogo">
         <h1>Yummy Bites</h1>
         </Box>
         <Box className="SocialMedia">

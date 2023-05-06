@@ -326,8 +326,8 @@
     }
 
     .food-item .row select{
-        font-size: 18px;
-        padding: 1px 5px
+        font-size: 20px;
+        padding: 2px 5px
     }
 
     .SocialMedia{
@@ -345,5 +345,9 @@
     .footer-font{
         flex-direction: column;
         text-align: center;
+    }
+
+    .footerlogo{
+        display: none;
     }
 }
