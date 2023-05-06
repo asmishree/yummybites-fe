@@ -26,6 +26,7 @@ function App() {
     {authToken ? (
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<MyOrder />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/new" element={<Register />} />
