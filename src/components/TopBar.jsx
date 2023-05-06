@@ -42,6 +42,7 @@ const Topbar = () => {
       color: navbar ? colors.link[500] : "white",
       borderBottom: isActive ? "2px solid" : "none",
       textDecoration: "none",
+      fontSize:"20px"
     };
   };
 
@@ -93,15 +94,15 @@ const Topbar = () => {
               <Box display="flex">
                 <NavLink style={navLinkStyles} to="/cart">
                 <Badge badgeContent={data.length} color="warning" overlap="circular">
-                  <ShoppingCartIcon/>
+                  <ShoppingCartIcon sx={{ fontSize: 30 }}/>
                   </Badge>
                 </NavLink>
                 <NavLink style={navLinkStyles} to="/order">
                   <span>MY ORDERS</span>
                 </NavLink>
-                <Box>
+                <NavLink style={navLinkStyles} to="/login">
                   <span onClick={handleLogout}>LOGOUT</span>
-                </Box>
+                </NavLink>
               </Box>
             ) : (
               <Box>
@@ -118,13 +119,13 @@ const Topbar = () => {
               mx={1}
             >
               {theme.palette.mode === "dark" ? (
-                <DarkModeOutlinedIcon sx={{ cursor: "pointer" }} />
+                <DarkModeOutlinedIcon sx={{ cursor: "pointer",fontSize: 30  }} />
               ) : (
-                <LightModeOutlinedIcon sx={{ cursor: "pointer" }} />
+                <LightModeOutlinedIcon sx={{ cursor: "pointer",fontSize: 30  }} />
               )}
             </Box>
             <Box className="mobMenu">
-              <MenuIcon onClick={handleMenuClick} />
+              <MenuIcon onClick={handleMenuClick} sx={{ cursor: "pointer",fontSize: 30  }} />
             </Box>
           </Box>
         </Box>
