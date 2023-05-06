@@ -5,6 +5,7 @@ import FoodItemCard from "../components/FoodItemCard";
 import Footer from "../components/Footer";
 import axios from "axios";
 import API from "../Api";
+import Loading from "../components/Loading";
 
 function Home() {
   const [foodCat, setFoodCat] = useState([]);
@@ -52,7 +53,7 @@ function Home() {
           </Box>
         </Box>
       </Box>
-      {foodCat !== []
+      {foodCat.length > 2
         ? foodCat.map((data) => {
             return (
               <Box className="grid-flow" m={5}>
@@ -83,10 +84,10 @@ function Home() {
               </Box>
             );
           })
-        : ""}
-
-{foodCat === []
-        ? <Box className="home-loading"><h1>Wait</h1></Box>: ""}
+        : <Box>
+          <Loading/>
+          
+          </Box>}
 
       <Box className="fooditem-grid" mx={5}></Box>
       <Box display="block">

@@ -174,13 +174,21 @@
     color: #ffa726;
   }
 
-  .home-loading{
+  .loading{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: red;
+    z-index: 6000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: end;
+    padding-bottom: 10vh;
+    background-color: rgba(255, 255, 255, 0.8);
     height: 100vh;
     width: 100vw;
+    transition: 5s;
+    color: black;
   }
 
 
