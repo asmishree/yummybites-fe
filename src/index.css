@@ -6,6 +6,10 @@
   font-family: 'Oswald', sans-serif;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .logo h1{
   font-family: 'Pacifico', cursive;
   font-weight: 100;
