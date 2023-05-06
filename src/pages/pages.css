@@ -92,7 +92,7 @@
 
 
 .image-box img{
-    width: 18vw;
+    width: calc(20vw - 5px);
     height: 300px;
     object-fit: cover;
     object-position: center center;
@@ -111,7 +111,7 @@
     align-items: center;
     text-align: center;
     padding: 10px;
-    width: 18vw;
+    width: calc(20vw - 5px);
     height: 300px;
     transition: .1s;
 }
@@ -209,7 +209,7 @@
   
 
     .description, .image-box img{
-        width: 28vw;
+        width: calc(30vw - 5px);
         height: 250px;
     }
   
@@ -235,7 +235,7 @@
     }
 
     .description,.image-box img{
-        width: 40vw;
+        width: calc(45vw - 5px);
         height: 250px;
     }
 
@@ -260,7 +260,7 @@
     }
 
     .description,.image-box img{
-        width: 35vw;
+        width: calc(40vw - 5px);
         height: 150px;
     }
 
@@ -303,7 +303,7 @@
     }
 
     .description,.image-box img{
-        width: 75vw;
+        width: calc(83vw - 5px);
         height: 250px;
     }
 

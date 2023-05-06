@@ -61,7 +61,7 @@ export default function FoodItemCard(props) {
     setSize(priceRef.current.value)
   },[])
   return (
-    <Box className="food-item" border="2px solid" padding="10px" >
+    <Box className="food-item" border="2px solid" pb="10px" pt="2px" >
       <Box
         display="flex"
         justifyContent="center"
@@ -71,6 +71,7 @@ export default function FoodItemCard(props) {
         <Box className="description" > {props.foodItem.description} </Box>
         <img src={props.foodItem.img} alt="food" />
       </Box>
+      <Box px={1}>
       <h3>{props.foodItem.name}</h3>
       <Box className="row">
         <Box display={"flex"}>
@@ -95,6 +96,8 @@ export default function FoodItemCard(props) {
         </Box>
         <h2>₹{finalPrice}/-</h2>
       </Box>
+      </Box>
+
       <Box className="cart">
         <hr />
         <Button
