@@ -50,7 +50,8 @@ const Topbar = () => {
       color: colors.link[500],
       borderBottom: isActive ? "2px solid" : "none",
       textDecoration: "none",
-      fontSize:"25px",
+      fontSize:"28px",
+      fontWeight:"500",
       margin:"10px 0"
     };
   };

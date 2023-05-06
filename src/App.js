@@ -23,7 +23,6 @@ function App() {
       <CssBaseline />
       <CartProvider>
     <Router>
-    {authToken ? (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
@@ -31,15 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/login/new" element={<Register />} />
         <Route path="*" element={<NotFound />} />
-      </Routes> ) :
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/login/new" element={<Register />} />
-        <Route path="*" element={<NotFound />} />
-        </Routes>}
+      </Routes>
       <Toaster />
     </Router>
     </CartProvider>
