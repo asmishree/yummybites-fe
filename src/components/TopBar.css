@@ -16,7 +16,8 @@
     position: fixed;
     right: 0;
     top: 0;
-    min-height: 50vh;
+    min-height: 40vh;
+    height: 350px;
     width: 100vw;
     z-index: 5000;
     transition: transform .5s ease;
