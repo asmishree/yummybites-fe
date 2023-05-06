@@ -113,16 +113,13 @@
     padding: 10px;
     width: calc(20vw - 5px);
     height: 300px;
-    transition: .1s;
 }
-
-
 
 .description:hover{
     font-size: 20px;
     cursor: pointer;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(rgba(0, 0, 0, 0.5),#F57C00);
 }
 
 .cart{

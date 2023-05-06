@@ -68,7 +68,7 @@ export default function FoodItemCard(props) {
         alignItems="center"
         className="image-box"
       >
-        <Box className="description" > {props.foodItem.description} </Box>
+        <Box className="description" > <p className="dec-text">{props.foodItem.description}</p> </Box>
         <img src={props.foodItem.img} alt="food" />
       </Box>
       <Box px={1}>
