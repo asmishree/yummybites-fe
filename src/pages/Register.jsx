@@ -95,7 +95,7 @@ function Register() {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-        <Box my={2}>
+        <Box my={2} className="mob-login-btn">
         <Button type="submit" variant="contained" color="warning" endIcon={<SendIcon />}>Register</Button>
         </Box>
       </form>

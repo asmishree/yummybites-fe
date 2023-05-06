@@ -364,4 +364,8 @@
     .home-bg-color{
         border-radius: 100% 0% 100% 0% / 0% 100% 8% 100%  ;
     }
+
+    .mob-login-btn{
+        text-align: center;
+    }
 }

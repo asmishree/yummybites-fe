@@ -69,7 +69,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-         <Box my={2}>
+         <Box my={2} className="mob-login-btn">
          <Button  type="submit" variant="contained" color="warning" endIcon={<SendIcon />}>Login</Button>
          </Box>
         </form>
