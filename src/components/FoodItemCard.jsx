@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useCart, useDispatchCart } from "./ContextReducer";
 import { Box, Button } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 
 export default function FoodItemCard(props) {
@@ -74,7 +73,8 @@ export default function FoodItemCard(props) {
       </Box>
       <h3>{props.foodItem.name}</h3>
       <Box className="row">
-        <Box>
+        <Box display={"flex"}>
+        <Box mr={2}>
           <select onChange={(e) => setQty(e.target.value)}>
             {Array.from(Array(6), (e, i) => {
               return (
@@ -92,6 +92,7 @@ export default function FoodItemCard(props) {
             })}
           </select>
         </Box>
+        </Box>
         <h2>₹{finalPrice}/-</h2>
       </Box>
       <Box className="cart">
@@ -100,7 +101,10 @@ export default function FoodItemCard(props) {
           type="submit"
           variant="contained"
           color="warning"
-          endIcon={<AddShoppingCartIcon />}
+          sx={{
+            fontSize:"15px",
+            fontWeight:"600"
+          }}
           onClick={handleAddToCart}
         >
           Add to Cart

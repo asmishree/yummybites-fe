@@ -39,7 +39,7 @@ function Footer() {
       </Box>
       <Box className="footer-font">
         <p>Copyright © {date.getFullYear()} Yummy Bites</p>
-        <p>Design by <Link to="https://github.com/sn247776">Sagar Nirwal</Link></p>
+        <p>Design by <Link to="https://github.com/sn247776" className="link">Sagar Nirwal</Link></p>
       </Box>
     </Box>
   );
