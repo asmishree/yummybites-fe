@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box,  useTheme } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../theme";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Badge from '@mui/material/Badge';
 import "./TopBar.css";
@@ -13,12 +12,31 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from "./ContextReducer";
 import { toast } from "react-hot-toast";
 
+// Mob NavBar Work
+
+import Menu from '@mui/material/Menu';
+
+
+
 const Topbar = () => {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  // Mob NavBar Work
+
+
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
   const [navbar, setNavbar] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const authToken = (localStorage.getItem("authToken"));
   const navigate = useNavigate();
   let data = useCart()
@@ -55,10 +73,6 @@ const Topbar = () => {
       fontWeight:"500",
       margin:"10px 0"
     };
-  };
-
-  const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
   };
 
   const changeBackground = () => {
@@ -123,22 +137,31 @@ const Topbar = () => {
               ) : (
                 <LightModeOutlinedIcon sx={{ cursor: "pointer",fontSize: 30  }} />
               )}
+              
             </Box>
-            <Box className="mobMenu">
-              <MenuIcon onClick={handleMenuClick} sx={{ cursor: "pointer",fontSize: 30  }} />
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+
+            <div>
       <Box
-        className={menuOpen ? "mob-navbar open" : "mob-navbar"}
-        bgcolor={colors.primary[400]}
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        color={navbar ? "" : "white"}
+        className="mobMenu"
       >
-        <Box textAlign="right">
-          <IconButton onClick={handleMenuClick}>
-            <CloseIcon fontSize="large"/>
-          </IconButton>
-        </Box>
+        <MenuIcon sx={{ cursor: "pointer",fontSize: 30  }} />
+      </Box>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <Box width={"100vw"} py={"20px"} >
         <Box
           display="flex"
           flexDirection="column"
@@ -174,7 +197,14 @@ const Topbar = () => {
             )}
     
         </Box>
+        </Box>
+      </Menu>
+    </div>
+
+          </Box>
+        </Box>
       </Box>
+
     </Box>
   );
 };

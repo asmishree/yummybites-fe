@@ -78,7 +78,9 @@
 }
 
 .food-item .row select{
-    font-size: 18px;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
     padding: 1px 5px
 }
 
@@ -87,9 +89,13 @@
 }
 .food-item h3{
     margin: 10px 0;
-    font-size: 1.6rem;
+    font-size: 28px;
 }
 
+.food-item h2{
+    font-size: 24px;
+    letter-spacing: 2px;
+}
 
 .image-box img{
     width: calc(20vw - 2px);
@@ -288,11 +294,15 @@
 
     .food-item h3{
         margin: 10px 0;
-        font-size: 1.2rem;
+        font-size: 24px;
+    }
+    .food-item h2{
+
+        font-size: 20px;
     }
 
     .food-item .row select{
-        font-size: 15px;
+        font-size: 20px;
         padding: 1px 5px
     }
 
@@ -325,14 +335,20 @@
         grid-column-end: 2;
     }
 
-    .food-item h3{
-        margin: 10px 0;
-        font-size: 1.5rem;
-    }
-
     .food-item .row select{
-        font-size: 20px;
-        padding: 2px 5px
+        font-size: 24px;
+        font-weight: 500;
+    
+    }
+    
+    
+    .food-item h3{
+        font-size: 28px;
+    }
+    
+    .food-item h2{
+        font-size: 24px;
+        letter-spacing: 2px;
     }
 
     .SocialMedia{
