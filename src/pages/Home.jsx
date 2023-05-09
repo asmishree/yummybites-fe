@@ -14,7 +14,7 @@ function Home() {
 
   const loadFoodItems = async () => {
     axios
-      .post(`${API}/items/list`)
+      .get(`${API}/items/list`)
       .then((response) => {
         const foodData = response.data[0];
         foodData.forEach(function (obj) {
