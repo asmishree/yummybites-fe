@@ -130,10 +130,10 @@ const Topbar = () => {
         </Box>
       </Box>
       <Box
-        className={menuOpen ? "mob-navbar open" : "mob-navbar"}
+        className={menuOpen ? "mob-navbar open" : "mob-navbar"} onClick={handleMenuClick}
         
       >
-        <Box bgcolor={colors.primary[400]} onClick={handleMenuClick} >
+        <Box bgcolor={colors.primary[400]}  >
         <Box textAlign="right">
           <IconButton onClick={handleMenuClick}>
             <CloseIcon fontSize="large"/>
