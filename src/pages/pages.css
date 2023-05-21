@@ -156,11 +156,7 @@
     margin: 10vh 0;
 }
 
-.mob-links{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+
 
 .mobile-table{
     display: none;

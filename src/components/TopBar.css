@@ -27,6 +27,12 @@
   .open{
     transform: translateY(0);
   }
+
+  .mob-links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
   
   .mob-navbar span{
     margin: 15px 0;
