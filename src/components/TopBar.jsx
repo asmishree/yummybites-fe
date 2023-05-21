@@ -131,8 +131,9 @@ const Topbar = () => {
       </Box>
       <Box
         className={menuOpen ? "mob-navbar open" : "mob-navbar"}
-        bgcolor={colors.primary[400]}
+        
       >
+        <Box bgcolor={colors.primary[400]} onClick={handleMenuClick} >
         <Box textAlign="right">
           <IconButton onClick={handleMenuClick}>
             <CloseIcon fontSize="large"/>
@@ -143,6 +144,7 @@ const Topbar = () => {
           flexDirection="column"
           justifyContent="space-between"
           alignItems="center"
+          p={"50px 0px"}
         >
 
           <NavLink style={mobLinkStyles} to="/">
@@ -172,6 +174,7 @@ const Topbar = () => {
               </Box>
             )}
     
+        </Box>
         </Box>
       </Box>
     </Box>
