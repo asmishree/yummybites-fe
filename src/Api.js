@@ -1,4 +1,4 @@
 
-const API = "https://doubtful-erin-nightingale.cyclic.app/api/v1"
+const API = "https://yummybites.onrender.com/api/v1"
 
 export default API
