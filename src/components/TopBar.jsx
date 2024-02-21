@@ -89,7 +89,7 @@ const Topbar = () => {
         {/* Nav Items */}
         <Box display="flex" alignItems="center">
           <Box display="flex">
-            {authToken ? (
+            {/* {authToken ? (
               <Box display="flex">
                 <NavLink style={navLinkStyles} to="/cart">
                 <Badge badgeContent={data.length} color="warning" overlap="circular">
@@ -109,7 +109,12 @@ const Topbar = () => {
                   <span>LOGIN</span>
                 </NavLink>
               </Box>
-            )}
+            )} */}
+            <NavLink style={navLinkStyles} to="/cart">
+                <Badge badgeContent={data.length} color="warning" overlap="circular">
+                  <ShoppingCartIcon/>
+                  </Badge>
+                </NavLink>
           </Box>
           <Box display="flex">
             <Box
